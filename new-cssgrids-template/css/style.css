@@ -1,0 +1,152 @@
+body {
+	background: url(../img/12_col.gif) center top repeat-y;
+	background-size: 90%;
+}
+
+#container {
+	width: 90%;
+	margin: 0 auto; /* top/bottm left/right */
+	display: grid;	
+	/* height: 100%; */
+
+	grid-template-columns: repeat(12, 1fr);
+	grid-template-rows: repeat(4, minmax(150px, auto));
+	grid-template-areas:
+		"header header header header header header header header header header header header"
+		"box-1 box-1 box-2 box-2 box-2 box-2 box-2 box-2 box-2 box-2 box-3 box-3"
+		"content content content content content content content content content sidebar sidebar sidebar"
+		"footer footer footer footer footer footer footer footer footer footer footer footer";
+
+	gap: 2%;
+}
+
+
+
+
+section {
+	border: 1px solid #333;
+}
+
+.section-1 {
+	grid-area: header;
+}
+.section-2 {
+	grid-area: box-1;
+}
+.section-3 {
+	grid-area: box-2;
+}
+.section-4 {
+	grid-area: box-3;
+}
+
+.section-5 {
+	grid-area: content;
+}
+
+.section-6 {
+	grid-area: sidebar;
+}
+
+
+.footergrid {
+	grid-area: footer;
+}
+
+
+
+.footergrid {
+	display:grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-template-rows: 1fr;
+	grid-template-areas: 
+	"footerone footerone footerone footertwo footertwo footertwo footerthree footerthree footerthree footerfour footerfour footerfour";
+}
+
+.footergrid section {
+	margin: 2px;
+}
+
+
+ .footer1 {
+	grid-area: footerone;
+}
+
+.footer2 {
+	grid-area: footertwo;
+}
+
+.footer3 {
+	grid-area: footerthree;
+}
+
+.footer4 {
+	grid-area: footerfour;
+}
+
+/* CSS for desktop size */
+
+ @media screen and  (min-width: 1200px) {
+	#container{
+	   grid-template-rows: repeat(4, minmax(150px, auto));
+	   grid-template-areas:
+	   "header header header header header header header header header header header header"
+	   "box-1 box-1 box-2 box-2 box-2 box-2 box-2 box-2 box-2 box-2 box-3 box-3"
+	   "content content content content content content content content content sidebar sidebar sidebar"
+	   "footer footer footer footer footer footer footer footer footer footer footer footer";
+	}
+
+   .footergrid section {
+   margin: 6px;
+   }
+}
+
+
+/* scaling for smaller desktop screens */
+
+
+@media screen and (min-width: 960px) and (max-width: 1200px) {
+	#container {
+		grid-template-columns: repeat(12, 1fr);
+		grid-template-rows: repeat(4, minmax(150px, auto));
+		grid-template-areas:
+		"header header header header header header header header header header header header"
+		"box-1 box-1 box-1 box-2 box-2 box-2 box-2 box-2 box-2 box-3 box-3 box-3"
+		"content content content content content content content content sidebar sidebar sidebar sidebar"
+		"footer footer footer footer footer footer footer footer footer footer footer footer";
+		gap: 2%;
+	}
+}
+
+/* scaling for tablets */
+
+@media screen and (min-width: 768px) and (max-width: 960px) {
+
+	#container {
+		grid-template-columns: repeat(12, 1fr);
+		grid-template-rows: repeat(5, minmax(150px, auto));
+		grid-template-areas:
+		"header header header header header header header header header header header header"
+		"box-1 box-1 box-1 box-1 box-2 box-2 box-2 box-2 box-3 box-3 box-3 box-3"
+		"content content content content content content sidebar sidebar sidebar sidebar sidebar sidebar"
+		"footer footer footer footer footer footer footer footer footer footer footer footer"
+		"footer footer footer footer footer footer footer footer footer footer footer footer";
+		gap: 2%;
+	}
+
+	.footergrid {
+		grid-template-columns: repeat(12, 1fr);
+		grid-template-rows: 1fr 1fr;
+		grid-template-areas:
+		"footerone footerone footerone footerone footerone footerone footertwo footertwo footertwo footertwo footertwo footertwo"
+		"footerthree footerthree footerthree footerthree footerthree footerthree footerfour footerfour footerfour footerfour footerfour footerfour";
+	}
+}
+
+.footergrid section {
+	margin: 6px;
+}
+    
+
+/* scaling for mobilephones */
+
